@@ -1,0 +1,24 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-label="Foreign currency notes arranged on a desk">
+  <defs><linearGradient id="gJ" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#065F46"/></linearGradient><linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1A2A"/><stop offset="100%" stop-color="#112B3C"/></linearGradient><radialGradient id="gGlow" cx="70%" cy="25%" r="60%"><stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/><stop offset="100%" stop-color="#0D9373" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="480" fill="url(#gBg)"/>
+  <rect width="900" height="480" fill="url(#gGlow)"/>
+  <g transform="translate(450 240) rotate(-8)">
+    <rect x="-210" y="-90" width="300" height="180" rx="16" fill="#D4A574"/>
+    <circle cx="-60" cy="0" r="40" fill="#B8884F" opacity="0.6"/>
+    <rect x="-210" y="-90" width="300" height="40" rx="16" fill="#B8884F" opacity="0.45"/>
+  </g>
+  <g transform="translate(470 260) rotate(6)">
+    <rect x="-210" y="-90" width="300" height="180" rx="16" fill="#0E2A3A" stroke="#10B981" stroke-opacity="0.5" stroke-width="2"/>
+    <circle cx="-60" cy="0" r="40" fill="none" stroke="#10B981" stroke-width="3"/>
+    <rect x="-210" y="-90" width="300" height="40" rx="16" fill="#0D9373" opacity="0.35"/>
+  </g>
+  <g transform="translate(490 240) rotate(-4)">
+    <rect x="-210" y="-90" width="300" height="180" rx="16" fill="#2A4F68"/>
+    <circle cx="-60" cy="0" r="40" fill="none" stroke="#D4A574" stroke-width="3"/>
+    <rect x="-210" y="-90" width="300" height="40" rx="16" fill="#D4A574" opacity="0.2"/>
+  </g>
+  <g font-family="Georgia, serif" font-weight="bold">
+    <text x="120" y="110" font-size="60" fill="#10B981">&#36; &#8364;</text>
+    <text x="700" y="420" font-size="60" fill="#D4A574">&#163; &#8377;</text>
+  </g>
+</svg>

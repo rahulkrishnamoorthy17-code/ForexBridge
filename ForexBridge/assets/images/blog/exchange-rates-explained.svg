@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <defs>
+    <linearGradient id="b1_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071923"/>
+      <stop offset="50%" stop-color="#0A2230"/>
+      <stop offset="100%" stop-color="#0C2B34"/>
+    </linearGradient>
+    <linearGradient id="b1_jade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="b1_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#122B38" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0B1A24" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="b1_glow" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0D9373" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b1_blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <rect width="900" height="560" fill="url(#b1_bg)"/>
+  <circle cx="650" cy="180" r="280" fill="url(#b1_glow)"/>
+  <!-- Grid lines -->
+  <g stroke="#1A3A4F" stroke-width="1" opacity="0.4">
+    <line x1="80" y1="100" x2="820" y2="100"/>
+    <line x1="80" y1="200" x2="820" y2="200"/>
+    <line x1="80" y1="300" x2="820" y2="300"/>
+    <line x1="80" y1="400" x2="820" y2="400"/>
+    <line x1="200" y1="60" x2="200" y2="480"/>
+    <line x1="400" y1="60" x2="400" y2="480"/>
+    <line x1="600" y1="60" x2="600" y2="480"/>
+    <line x1="800" y1="60" x2="800" y2="480"/>
+  </g>
+  <!-- Chart Wave Glow -->
+  <path d="M 100 380 C 220 360, 280 260, 400 290 C 520 320, 600 160, 780 140" fill="none" stroke="#10B981" stroke-width="8" opacity="0.3" filter="url(#b1_blur)"/>
+  <!-- Chart Wave Main -->
+  <path d="M 100 380 C 220 360, 280 260, 400 290 C 520 320, 600 160, 780 140" fill="none" stroke="url(#b1_jade)" stroke-width="4"/>
+  <!-- Chart area fill -->
+  <path d="M 100 380 C 220 360, 280 260, 400 290 C 520 320, 600 160, 780 140 L 780 440 L 100 440 Z" fill="url(#b1_jade)" opacity="0.08"/>
+  <!-- Data nodes -->
+  <circle cx="100" cy="380" r="6" fill="#10B981" stroke="#fff" stroke-width="2"/>
+  <circle cx="400" cy="290" r="6" fill="#10B981" stroke="#fff" stroke-width="2"/>
+  <circle cx="780" cy="140" r="8" fill="#34D399" stroke="#fff" stroke-width="3"/>
+  <!-- Floating Glass Card 1: USD/INR -->
+  <g transform="translate(120, 140)">
+    <rect width="240" height="130" rx="16" fill="url(#b1_card)" stroke="#1A4557" stroke-width="1.5"/>
+    <circle cx="36" cy="36" r="18" fill="#0D9373" opacity="0.25"/>
+    <text x="36" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#10B981" text-anchor="middle">$</text>
+    <text x="66" y="34" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#E8EEF2">USD / INR</text>
+    <text x="66" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="400" fill="#8FB5CC">Interbank Rate</text>
+    <text x="36" y="96" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#FFFFFF">83.42</text>
+    <rect x="156" y="78" width="64" height="24" rx="12" fill="#065F46" opacity="0.6"/>
+    <text x="188" y="94" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#34D399" text-anchor="middle">+0.24%</text>
+  </g>
+  <!-- Floating Glass Card 2: EUR/INR -->
+  <g transform="translate(540, 260)">
+    <rect width="240" height="130" rx="16" fill="url(#b1_card)" stroke="#1A4557" stroke-width="1.5"/>
+    <circle cx="36" cy="36" r="18" fill="#0D9373" opacity="0.25"/>
+    <text x="36" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#10B981" text-anchor="middle">€</text>
+    <text x="66" y="34" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#E8EEF2">EUR / INR</text>
+    <text x="66" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="400" fill="#8FB5CC">European Union</text>
+    <text x="36" y="96" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#FFFFFF">90.15</text>
+    <rect x="156" y="78" width="64" height="24" rx="12" fill="#065F46" opacity="0.6"/>
+    <text x="188" y="94" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#34D399" text-anchor="middle">+0.18%</text>
+  </g>
+</svg>

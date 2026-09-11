@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="International travel money and remittance concept">
+  <defs><linearGradient id="gJ" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#065F46"/></linearGradient><linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1A2A"/><stop offset="100%" stop-color="#112B3C"/></linearGradient><radialGradient id="gGlow" cx="70%" cy="25%" r="60%"><stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/><stop offset="100%" stop-color="#0D9373" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gBg)"/>
+  <rect width="1200" height="800" fill="url(#gGlow)"/>
+  <g opacity="0.2">
+    <path d="M 0 520 Q 300 460 600 520 T 1200 520" fill="none" stroke="#10B981" stroke-width="2"/>
+    <path d="M 0 560 Q 300 500 600 560 T 1200 560" fill="none" stroke="#10B981" stroke-width="1" stroke-opacity="0.5"/>
+  </g>
+  <g opacity="0.9">
+    <path d="M 380 300 h 440 q 30 0 50 22 l 34 42 q 20 26 44 26 l 90 2" fill="none" stroke="#10B981" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="470" cy="300" r="34" fill="#D4A574"/>
+    <path d="M 990 300 a 60 60 0 1 1 -2 0" fill="none" stroke="#D4A574" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 1020 270 l 30 0 a 24 24 0 0 1 0 48 l -30 0" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="470" y="360" width="130" height="190" rx="18" fill="#0E2A3A" stroke="#10B981" stroke-opacity="0.4" stroke-width="2"/>
+    <rect x="500" y="382" width="70" height="46" rx="8" fill="#0D9373"/>
+    <circle cx="535" cy="492" r="14" fill="none" stroke="#10B981" stroke-width="3"/>
+    <path d="M 505 440 h 60 v 26 h -60 z" fill="#10B981" opacity="0.5"/>
+    <rect x="598" y="360" width="130" height="190" rx="18" fill="#0E2A3A" stroke="#D4A574" stroke-opacity="0.4" stroke-width="2"/>
+    <rect x="628" y="382" width="70" height="46" rx="8" fill="#B8884F"/>
+    <circle cx="663" cy="492" r="14" fill="none" stroke="#D4A574" stroke-width="3"/>
+    <path d="M 633 440 h 60 v 26 h -60 z" fill="#D4A574" opacity="0.5"/>
+  </g>
+  <g>
+    <path d="M 850 130 l 90 0 l 34 44 q 24 30 52 46 l 84 30 q 26 10 18 38 v 46 q -6 30 -38 26 l -60 -10" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1042" cy="280" r="16" fill="#10B981"/>
+  </g>
+  <g font-family="Georgia, serif" font-weight="bold">
+    <text x="130" y="260" font-size="70" fill="#10B981">&#165;</text>
+    <text x="200" y="240" font-size="44" fill="#D4A574">&#8364;</text>
+    <text x="1100" y="640" font-size="66" fill="#D4A574" opacity="0.8">&#8377;</text>
+    <text x="80" y="620" font-size="60" fill="#10B981" opacity="0.8">&#163;</text>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="120" y="430" width="180" height="58" rx="14" fill="#0D9373" opacity="0.35"/>
+    <text x="210" y="453" font-size="20" fill="#A7F3D0" text-anchor="middle">Travel Money Card</text>
+    <text x="210" y="476" font-size="18" fill="#fff" text-anchor="middle">Load &amp; reload anytime</text>
+  </g>
+</svg>
