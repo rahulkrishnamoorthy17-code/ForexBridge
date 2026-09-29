@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-label="International money transfer around the globe">
+  <defs><linearGradient id="gJ" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#065F46"/></linearGradient><linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1A2A"/><stop offset="100%" stop-color="#112B3C"/></linearGradient><radialGradient id="gGlow" cx="70%" cy="25%" r="60%"><stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/><stop offset="100%" stop-color="#0D9373" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="480" fill="url(#gBg)"/>
+  <rect width="900" height="480" fill="url(#gGlow)"/>
+  <g transform="translate(450 240)">
+    <circle r="150" fill="none" stroke="#10B981" stroke-opacity="0.4" stroke-width="2"/>
+    <ellipse rx="150" ry="55" fill="none" stroke="#D4A574" stroke-opacity="0.35" stroke-width="2" transform="rotate(-14)"/>
+    <ellipse rx="150" ry="55" fill="none" stroke="#D4A574" stroke-opacity="0.35" stroke-width="2" transform="rotate(14)"/>
+    <path d="M -150 40 Q 0 110 150 40" fill="none" stroke="#10B981" stroke-opacity="0.4" stroke-width="2"/>
+    <circle cx="0" cy="0" r="34" fill="#0D9373"/>
+    <path d="M -14 0 L 14 0 M 7 -9 L 14 0 L 7 9 M -7 -11 L -16 -2 M -7 11 L -16 2" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <circle cx="210" cy="170" r="22" fill="#D4A574"/>
+  <circle cx="690" cy="180" r="22" fill="#10B981"/>
+  <path d="M 232 178 Q 450 120 668 190" fill="none" stroke="#fff" stroke-opacity="0.4" stroke-width="3" stroke-dasharray="8 10"/>
+</svg>
