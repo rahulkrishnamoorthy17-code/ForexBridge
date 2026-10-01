@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <defs>
+    <linearGradient id="sr_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071A24"/>
+      <stop offset="50%" stop-color="#0A2533"/>
+      <stop offset="100%" stop-color="#07161F"/>
+    </linearGradient>
+    <linearGradient id="sr_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#sr_bg)"/>
+  <g transform="translate(120, 100)">
+    <!-- Main Card Body -->
+    <rect width="660" height="360" rx="24" fill="#0D222E" stroke="#1D4B5E" stroke-width="1.5"/>
+    <text x="40" y="50" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Instant 24/7 Travel Card Reload Portal</text>
+    
+    <!-- Phone / reload interface -->
+    <g transform="translate(40, 80)">
+      <rect width="260" height="240" rx="16" fill="#081822" stroke="#10B981" stroke-width="1.5"/>
+      <text x="25" y="40" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8FB5CC">RELOAD WALLET</text>
+      <text x="25" y="70" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#34D399">+ €1,500.00</text>
+      <rect x="25" y="95" width="210" height="40" rx="8" fill="#133140"/>
+      <text x="35" y="120" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">Rate Locked: 1 EUR = ₹90.15</text>
+      <rect x="25" y="150" width="210" height="45" rx="10" fill="#10B981"/>
+      <text x="130" y="178" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Confirm &amp; Top Up</text>
+      <text x="130" y="220" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#8FB5CC" text-anchor="middle">Funds active in under 2 hours</text>
+    </g>
+
+    <!-- Travel Card graphic -->
+    <g transform="translate(340, 100)">
+      <rect width="280" height="175" rx="16" fill="url(#sr_card)" stroke="#34D399" stroke-width="1.5"/>
+      <circle cx="45" cy="45" r="16" fill="#FFFFFF" opacity="0.2"/>
+      <text x="45" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">FX</text>
+      <text x="235" y="45" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">TRAVEL</text>
+      <rect x="35" y="80" width="35" height="25" rx="4" fill="#F59E0B"/>
+      <text x="35" y="145" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600" fill="#FFFFFF">•••• 4590</text>
+      <text x="210" y="145" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E8EEF2">12/30</text>
+    </g>
+  </g>
+</svg>

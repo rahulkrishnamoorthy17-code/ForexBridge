@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard — ForexBridge</title>
+<meta content="ForexBridge internal admin dashboard — enquiries, rate movements, remittance volume and branch analytics. Staff use only." name="description"/>
+<meta content="noindex" name="robots"/>
+<link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="assets/css/extra.css" rel="stylesheet"/>
+<link href="assets/css/final-review-fixes.css" rel="stylesheet"/>
+<link href="assets/css/client-final-review.css" rel="stylesheet"/></head>
+<body class="admin-layout">
+<!-- ============ SIDEBAR ============ -->
+<aside class="admin-sidebar" data-admin-sidebar="">
+<div class="admin-sidebar__header">
+<span class="admin-sidebar__logo">
+<span class="logo-mark"><i class="fas fa-arrow-right-arrow-left"></i></span>
+        Forex<span class="text-accent">Bridge</span> Admin
+      </span>
+</div>
+<nav class="admin-sidebar__nav" data-admin-nav="">
+<span class="admin-sidebar__section-title">Menu</span>
+<a class="admin-sidebar__link is-active" data-nav="" href="#"><i aria-hidden="true" class="fas fa-gauge-high"></i> Dashboard</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-envelope-open-text"></i> Enquiries <span class="admin-sidebar__badge">12</span></a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-chart-line"></i> Rates Management</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-arrow-right-arrow-left"></i> Transactions</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-paper-plane"></i> Remittance</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-credit-card"></i> Travel Cards</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-location-dot"></i> Branches</a>
+<span class="admin-sidebar__section-title">Account</span>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-user"></i> Profile</a>
+<a class="admin-sidebar__link" data-nav="" href="#"><i aria-hidden="true" class="fas fa-gear"></i> Settings</a>
+<a class="admin-sidebar__link" href="login.html"><i aria-hidden="true" class="fas fa-right-from-bracket"></i> Sign out</a>
+</nav>
+</aside>
+<!-- ============ MAIN CONTENT ============ -->
+<section class="admin-content" data-admin-content="">
+<div class="admin-topbar">
+<div class="flex items-center gap-3">
+<button aria-label="Toggle sidebar" class="admin-topbar__toggle" data-admin-toggle="" type="button">
+<i aria-hidden="true" class="fas fa-bars"></i>
+</button>
+<span style="font-weight:var(--font-semibold);">Admin Dashboard</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 text-sm text-accent" href="index.html" style="text-decoration:none;"><i aria-hidden="true" class="fas fa-globe"></i> View public site</a>
+<span class="badge badge--primary"><i aria-hidden="true" class="fas fa-user-shield"></i> Staff Admin</span>
+</div>
+</div>
+<div class="admin-page">
+<div class="admin-page__header">
+<h1 class="admin-page__title">Overview</h1>
+<div class="flex items-center gap-3">
+<button class="btn btn-secondary btn-sm" data-admin-action="Export CSV" type="button"><i aria-hidden="true" class="fas fa-download"></i> Export CSV</button>
+<button class="btn btn-primary btn-sm" data-admin-action="Refresh data" type="button"><i aria-hidden="true" class="fas fa-rotate"></i> Refresh data</button>
+</div>
+</div>
+<!-- KPI counters -->
+<div class="grid grid-4 mb-6">
+<div class="kpi-card">
+<div class="kpi-card__icon"><i aria-hidden="true" class="fas fa-users"></i></div>
+<span class="kpi-card__trend kpi-card__trend--up">+8.4%</span>
+<div class="kpi-card__value" data-count-to="3461">0</div>
+<div class="kpi-card__label">Transactions (MTD)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-card__icon"><i aria-hidden="true" class="fas fa-file-circle-question"></i></div>
+<div class="kpi-card__value" data-count-to="129">0</div>
+<div class="kpi-card__label">Open enquiries</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-card__icon"><i aria-hidden="true" class="fas fa-arrow-right-arrow-left"></i></div>
+<div class="kpi-card__value" data-count-to="482">0</div>
+<div class="kpi-card__label">Transfers (MTD)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-card__icon"><i aria-hidden="true" class="fas fa-circle-check"></i></div>
+<div class="kpi-card__value" data-count-to="94.2">0</div>
+<div class="kpi-card__label">Satisfaction score</div>
+</div>
+</div>
+<!-- Charts row 1 -->
+<div class="grid grid-2 mb-6">
+<div class="admin-card">
+<h2 class="admin-card__title">Enquiries this week</h2>
+<canvas aria-label="Enquiries received this week" data-chart="enquiries" style="width:100%;height:220px;"></canvas>
+</div>
+<div class="admin-card">
+<h2 class="admin-card__title">USD/INR rate movement (demo)</h2>
+<canvas aria-label="USD to INR rate movement over the day" data-chart="rates" style="width:100%;height:220px;"></canvas>
+</div>
+</div>
+<!-- Charts row 2 -->
+<div class="grid grid-2 mb-6">
+<div class="admin-card">
+<h2 class="admin-card__title">Remittance volume (₹ Lakh)</h2>
+<canvas aria-label="Monthly remittance volume in lakh rupees" data-chart="remittance" style="width:100%;height:220px;"></canvas>
+</div>
+<div class="admin-card">
+<h2 class="admin-card__title">Quick actions</h2>
+<div class="flex flex-col gap-3">
+<button class="btn btn-primary w-full" data-admin-action="Approve pending" type="button"><i aria-hidden="true" class="fas fa-circle-check"></i> Approve pending</button>
+<button class="btn btn-primary w-full" data-admin-action="Re-rate enquiry" type="button"><i aria-hidden="true" class="fas fa-percent"></i> Re-rate enquiry</button>
+<button class="btn btn-primary w-full" data-admin-action="Send statement" type="button"><i aria-hidden="true" class="fas fa-paper-plane"></i> Send statement</button>
+</div>
+</div>
+</div>
+<!-- Recent transactions -->
+<div class="admin-card mb-6">
+<h2 class="admin-card__title">Recent transactions</h2>
+<div class="table-wrap">
+<table class="admin-table">
+<thead>
+<tr><th>ID</th><th>Customer</th><th>Service</th><th>Amount</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>FX-10482</td><td>Ananya Sharma</td><td>Currency exchange</td><td>₹48,200</td>
+<td><span class="status-dot status-dot--active"></span> Completed</td>
+</tr>
+<tr>
+<td>FX-10481</td><td>Daniel James</td><td>Foreign remittance</td><td>₹2,41,900</td>
+<td><span class="status-dot status-dot--pending"></span> Processing</td>
+</tr>
+<tr>
+<td>FX-10480</td><td>Kavitha Iyer</td><td>Travel card load</td><td>₹85,000</td>
+<td><span class="status-dot status-dot--active"></span> Completed</td>
+</tr>
+<tr>
+<td>FX-10479</td><td>Bloom Imports</td><td>Corporate transfer</td><td>₹12,50,000</td>
+<td><span class="status-dot status-dot--active"></span> Completed</td>
+</tr>
+<tr>
+<td>FX-10478</td><td>Sam Lewis</td><td>Currency exchange</td><td>₹6,750</td>
+<td><span class="status-dot status-dot--closed"></span> Cancelled</td>
+</tr>
+<tr>
+<td>FX-10477</td><td>Meera Krishnan</td><td>Education remittance</td><td>₹3,10,000</td>
+<td><span class="status-dot status-dot--pending"></span> Pending</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Activity feed -->
+<div class="admin-card mb-6">
+<h2 class="admin-card__title">Recent activity</h2>
+<div class="activity-feed">
+<div class="activity-item">
+<span class="activity-item__icon"><i aria-hidden="true" class="fas fa-user-plus"></i></span>
+<div>
+<p class="activity-item__text">New customer profile created for <strong>Riya Gupta</strong> at the Delhi branch.</p>
+<p class="activity-item__time"><i aria-hidden="true" class="fas fa-clock"></i> 18 min ago</p>
+</div>
+</div>
+<div class="activity-item">
+<span class="activity-item__icon"><i aria-hidden="true" class="fas fa-file-signature"></i></span>
+<div>
+<p class="activity-item__text">Enquiry <strong>ENQ-2081</strong> marked as completed with documents verified.</p>
+<p class="activity-item__time"><i aria-hidden="true" class="fas fa-clock"></i> 1 hour ago</p>
+</div>
+</div>
+<div class="activity-item">
+<span class="activity-item__icon"><i aria-hidden="true" class="fas fa-comment-dots"></i></span>
+<div>
+<p class="activity-item__text"><strong>Bloom Imports</strong> requested a corporate transfer rate quote for USD 20,000.</p>
+<p class="activity-item__time"><i aria-hidden="true" class="fas fa-clock"></i> 3 hours ago</p>
+</div>
+</div>
+<div class="activity-item">
+<span class="activity-item__icon"><i aria-hidden="true" class="fas fa-triangle-exclamation"></i></span>
+<div>
+<p class="activity-item__text">Rate alert triggered for <strong>GBP/INR</strong> crossing the 107.00 threshold.</p>
+<p class="activity-item__time"><i aria-hidden="true" class="fas fa-clock"></i> 5 hours ago</p>
+</div>
+</div>
+<div class="activity-item">
+<span class="activity-item__icon"><i aria-hidden="true" class="fas fa-arrow-right-arrow-left"></i></span>
+<div>
+<p class="activity-item__text">Remittance <strong>FX-10481</strong> moved to processing after KYC approval.</p>
+<p class="activity-item__time"><i aria-hidden="true" class="fas fa-clock"></i> Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+<div class="inline-alert inline-alert--info">
+<i aria-hidden="true" class="fas fa-circle-info"></i>
+<span>This is a demonstration dashboard with sample data. Connect your backend/CRM to make it live.</span>
+</div>
+</div>
+</section>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/rates.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
