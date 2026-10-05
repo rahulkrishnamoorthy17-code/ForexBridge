@@ -1,0 +1,109 @@
+/* ForexBridge auth layout final fix */
+.auth-page main{
+  min-height:100vh!important;
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:96px 32px 32px!important;
+}
+.auth-page .auth-back-link{display:none!important;}
+.auth-page .auth-page-brand{
+  position:absolute;
+  top:22px;
+  left:28px;
+  z-index:30;
+  display:inline-flex;
+  align-items:center;
+  gap:.65rem;
+  color:var(--color-text)!important;
+  text-decoration:none;
+  font-family:var(--font-display);
+  font-size:1.32rem;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+.auth-page .auth-page-brand__mark{
+  width:42px;height:42px;min-width:42px;border-radius:13px;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;background:linear-gradient(135deg,#18b98a,#08795e);
+  box-shadow:0 8px 20px rgba(13,147,115,.22);
+}
+.auth-page .auth-page-controls{
+  position:absolute;
+  top:22px;
+  right:28px;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+}
+.auth-page .auth-control-btn{
+  height:42px;
+  min-width:42px;
+  padding:0 .8rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--color-border);
+  border-radius:12px;
+  background:var(--color-surface-elevated);
+  color:var(--color-text);
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 5px 16px rgba(15,35,45,.06);
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.auth-page .auth-control-btn:hover{transform:translateY(-1px);border-color:rgba(13,147,115,.5);background:var(--color-surface);}
+.auth-page .auth-control-btn--rtl{min-width:54px;}
+
+/* Remove the old empty brand row and let both panels fill the full card. */
+.auth-page .auth-wrap{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  grid-template-rows:1fr!important;
+  width:min(1080px,100%)!important;
+  min-height:640px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:24px!important;
+}
+.auth-page .auth-wrap>.auth-shell-brand{display:none!important;}
+.auth-page .auth-visual,
+.auth-page .auth-card{
+  min-height:640px!important;
+  height:100%!important;
+  margin:0!important;
+}
+.auth-page .auth-card{align-self:stretch!important;}
+.auth-page .auth-card__inner{max-width:420px!important;}
+
+html.dark .auth-page .auth-page-brand,
+html[data-theme="dark"] .auth-page .auth-page-brand{color:#fff!important;}
+html.dark .auth-page .auth-control-btn,
+html[data-theme="dark"] .auth-page .auth-control-btn{
+  background:#0d2028!important;color:#fff!important;border-color:rgba(255,255,255,.13)!important;
+}
+
+html[dir="rtl"] .auth-page .auth-page-brand{left:28px!important;right:auto!important;}
+html[dir="rtl"] .auth-page .auth-page-controls{right:28px!important;left:auto!important;}
+
+@media(max-width:1024px){
+  .auth-page main{padding-top:88px!important;}
+  .auth-page .auth-wrap{grid-template-columns:1fr!important;min-height:0!important;}
+  .auth-page .auth-visual{display:none!important;}
+  .auth-page .auth-card{min-height:620px!important;}
+}
+@media(max-width:600px){
+  .auth-page main{padding:82px 14px 18px!important;align-items:flex-start!important;}
+  .auth-page .auth-page-brand{top:16px;left:14px;font-size:1.05rem;gap:.45rem;}
+  .auth-page .auth-page-brand__mark{width:36px;height:36px;min-width:36px;border-radius:11px;}
+  .auth-page .auth-page-controls{top:16px;right:14px;gap:.35rem;}
+  .auth-page .auth-control-btn{height:36px;min-width:36px;padding:0 .55rem;border-radius:10px;font-size:.84rem;}
+  .auth-page .auth-control-btn--rtl{min-width:44px;}
+  .auth-page .auth-wrap{border-radius:18px!important;}
+  .auth-page .auth-card{min-height:0!important;padding:1rem!important;}
+  .auth-page .auth-card__inner{padding:1.15rem .35rem!important;}
+}

@@ -1,0 +1,665 @@
+/* ============================================================
+   ForexBridge — Client Review Final Fix Pack
+   Fixes: service detail consistency, light-mode visibility,
+   branches/blog/policy alignment, 1024 + 360 responsiveness,
+   and stable LTR/RTL behaviour.
+   ============================================================ */
+
+/* ---------- Global defensive layout ---------- */
+html, body { max-width:100%; overflow-x:hidden; }
+img, svg, video, canvas { max-width:100%; height:auto; }
+main, section, .container, .split, .grid, [class*="__grid"] { min-width:0; }
+.container { width:min(var(--container-xl, 1280px), calc(100% - 40px)); margin-inline:auto; }
+
+/* ---------- 1. Home 01: remove decorative icons requested by review ---------- */
+.page-home main .service-card__icon-overlay,
+.page-home main .testimonial-card__quote-icon { display:none !important; }
+.page-home main .service-card__thumb::after { content:none !important; }
+
+/* ---------- 2–4. Services / all 12 service detail states ---------- */
+.page-service-detail .service-detail-view-section {
+  padding-top:calc(var(--header-height) + 1.75rem) !important;
+  padding-bottom:clamp(3rem,6vw,5rem) !important;
+}
+.page-service-detail .service-detail-page__container {
+  width:min(1360px, calc(100% - 40px)) !important;
+  max-width:1360px !important;
+}
+.page-service-detail .service-reference-detail { gap:clamp(1.25rem,2.2vw,2rem) !important; }
+.page-service-detail .service-reference-detail__hero {
+  display:grid !important;
+  grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  align-items:stretch !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+}
+.page-service-detail .service-reference-detail__media {
+  min-height:560px !important;
+  height:100% !important;
+  background:var(--color-bg-alt) !important;
+}
+.page-service-detail .service-reference-detail__media img {
+  width:100% !important;
+  height:100% !important;
+  min-height:560px !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+.page-service-detail .service-reference-detail__content {
+  min-width:0 !important;
+  padding:clamp(1.75rem,3vw,3.25rem) !important;
+  justify-content:center !important;
+}
+.page-service-detail .service-reference-detail__content h1 {
+  color:var(--color-text) !important;
+  -webkit-text-fill-color:var(--color-text) !important;
+  background:none !important;
+  text-shadow:none !important;
+  overflow-wrap:anywhere;
+}
+html.dark .page-service-detail .service-reference-detail__content h1,
+[data-theme="dark"] .page-service-detail .service-reference-detail__content h1 {
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.page-service-detail .service-reference-detail__lead { overflow-wrap:anywhere; }
+.page-service-detail .service-reference-detail__included-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+.page-service-detail .service-reference-detail__included-grid > div { min-width:0 !important; }
+.page-service-detail .service-reference-detail__info-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+.page-service-detail .service-reference-detail__card {
+  height:100% !important;
+  min-width:0 !important;
+  overflow:hidden;
+}
+.page-service-detail .service-reference-detail__simple-list li,
+.page-service-detail .service-reference-detail__feature-list li { overflow-wrap:anywhere; }
+.page-service-detail .service-reference-process {
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+.page-service-detail .service-reference-step { height:100%; }
+.page-service-detail .service-reference-step p { overflow-wrap:anywhere; }
+/* Prevent the Services landing hero (“Complete Forex Ecosystem”) from ever appearing in detail state. */
+.page-service-detail .services-hero { display:none !important; }
+
+/* Services listing card alignment */
+.page-services #servicesGrid,
+.page-services [data-services-grid] {
+  align-items:stretch !important;
+}
+.page-services .service-card { height:100% !important; }
+.page-services .service-card__body { display:flex !important; flex-direction:column !important; flex:1 1 auto !important; }
+.page-services .service-card__link { margin-top:auto !important; }
+
+/* ---------- 5, 8, 14. Dark CTA panels visible in LIGHT mode ---------- */
+html:not(.dark) body main .card.card--dark,
+html[data-theme="light"] body main .card.card--dark {
+  background:linear-gradient(145deg,#071b29 0%,#0b2b38 58%,#0b3640 100%) !important;
+  border-color:rgba(52,211,153,.20) !important;
+  color:#fff !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+html:not(.dark) body main .card.card--dark :is(h1,h2,h3,h4,h5,h6,.heading-1,.heading-2,.heading-3,strong),
+html[data-theme="light"] body main .card.card--dark :is(h1,h2,h3,h4,h5,h6,.heading-1,.heading-2,.heading-3,strong) {
+  color:#fff !important; -webkit-text-fill-color:#fff !important; opacity:1 !important;
+}
+html:not(.dark) body main .card.card--dark :is(p,li,.text-muted,.text-lead),
+html[data-theme="light"] body main .card.card--dark :is(p,li,.text-muted,.text-lead) {
+  color:#d5e5ed !important; -webkit-text-fill-color:#d5e5ed !important; opacity:1 !important;
+}
+html:not(.dark) body main .card.card--dark .section-label,
+html[data-theme="light"] body main .card.card--dark .section-label {
+  color:#79edc7 !important; -webkit-text-fill-color:#79edc7 !important;
+}
+html:not(.dark) body main .card.card--dark .btn-outline-white,
+html[data-theme="light"] body main .card.card--dark .btn-outline-white {
+  color:#fff !important; border-color:rgba(255,255,255,.72) !important; background:transparent !important;
+}
+
+/* ---------- 6. Rates & Tools hero excess empty space ---------- */
+.page-rates .hero,
+.page-rate-calculator .page-hero,
+.page-rate-calculator .hero {
+  min-height:0 !important;
+  padding-top:calc(var(--header-height) + clamp(2rem,4vw,3.25rem)) !important;
+  padding-bottom:clamp(2rem,4vw,3.25rem) !important;
+}
+.page-rates .hero .container,
+.page-rate-calculator .page-hero .container,
+.page-rate-calculator .hero .container { min-height:0 !important; }
+
+/* ---------- 7. Branches consistent grid alignment ---------- */
+.branches-page .branches-main-layout #branchesGrid,
+.branches-page #branchesGrid {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+  gap:1.25rem !important;
+}
+.branches-page .branch-card {
+  height:100% !important;
+  min-width:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+}
+.branches-page .branch-card__header { min-height:78px; }
+.branches-page .branch-card__address { min-height:52px; }
+.branches-page .branch-card__meta { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+.branches-page .branch-card__services { min-height:70px; align-content:flex-start; }
+.branches-page .branch-card__footer { margin-top:auto !important; }
+.branches-page .branch-overview__card { height:100%; }
+
+/* ---------- 9–10. Blog image cleanup + Travel Tips spacing/alignment ---------- */
+.blog-page .blog-card-v2,
+.blog-page .blog-card,
+.blog-detail-page .blog-related__item { overflow:hidden !important; }
+.blog-page .blog-card-v2__media,
+.blog-page .blog-card__image-wrap,
+.blog-page .blog-card__image { aspect-ratio:16/10 !important; min-height:0 !important; }
+.blog-page .blog-card-v2__media img,
+.blog-page .blog-card__image-wrap img,
+.blog-page .blog-card__image img {
+  width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important;
+}
+.blog-page .blog-card-v2__body,
+.blog-page .blog-card__body {
+  display:flex !important; flex-direction:column !important; min-width:0 !important;
+  padding:1.25rem !important; text-align:start !important;
+}
+.blog-page .blog-card-v2 h3,
+.blog-page .blog-card__title { margin-top:0 !important; }
+.blog-page .blog-card-v2__body > p,
+.blog-page .blog-card__excerpt { margin-bottom:1rem !important; line-height:1.65 !important; text-align:start !important; }
+.blog-page .blog-card-v2__footer,
+.blog-page .blog-card__meta { margin-top:auto !important; }
+.blog-detail-page .blog-related__item img {
+  object-fit:cover !important; object-position:center !important; background:var(--color-bg-alt) !important;
+}
+
+/* ---------- 11. Home 01 International Remittance light-mode visibility ---------- */
+.page-home main .card.card--dark {
+  opacity:1 !important; visibility:visible !important;
+}
+.page-home main .card.card--dark > div,
+.page-home main .card.card--dark span,
+.page-home main .card.card--dark p { opacity:1 !important; }
+.page-home main .card.card--dark .section-label { color:#7af0c8 !important; }
+.page-home main .card.card--dark .flex span { color:#d7e7ee !important; -webkit-text-fill-color:#d7e7ee !important; }
+
+/* ---------- 12. Policy page headers: identical alignment ---------- */
+.policy-page .page-hero {
+  min-height:0 !important;
+  padding-top:calc(var(--header-height) + 2.5rem) !important;
+  padding-bottom:2.5rem !important;
+}
+.policy-page .page-hero .container { display:flex !important; flex-direction:column !important; align-items:center !important; text-align:center !important; }
+.policy-page .page-hero__content { max-width:760px !important; margin-inline:auto !important; align-items:center !important; text-align:center !important; }
+.policy-page .page-hero__title,
+.policy-page .page-hero__subtitle { margin-inline:auto !important; text-align:center !important; }
+.policy-page .breadcrumb { justify-content:center !important; }
+
+/* ---------- 13. Staff Login left visual visible in Light Mode ---------- */
+.page-staff-login .auth-visual {
+  background:linear-gradient(145deg,#061a28 0%,#0a2c39 55%,#0b3841 100%) !important;
+  color:#fff !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.page-staff-login .auth-visual__bg,
+.page-staff-login .auth-visual__grid { opacity:1 !important; visibility:visible !important; }
+.page-staff-login .auth-visual__content,
+.page-staff-login .auth-visual__foot { position:relative; z-index:2; opacity:1 !important; visibility:visible !important; }
+.page-staff-login .auth-visual :is(h1,h2,h3,strong) { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+.page-staff-login .auth-visual :is(p,.auth-visual__quote,.auth-visual__foot,.auth-visual__foot a) { color:#d6e8ef !important; -webkit-text-fill-color:#d6e8ef !important; }
+.page-staff-login .auth-visual .highlight { color:#67e8bc !important; -webkit-text-fill-color:#67e8bc !important; }
+
+/* ---------- 15. Home 01 at 1024px ---------- */
+@media (max-width:1100px) {
+  .page-home .hero .split,
+  .page-home .split { grid-template-columns:1fr 1fr !important; gap:1.5rem !important; }
+  .page-home .grid.grid-4 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .page-home .grid.grid-3 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .page-home .card.card--dark > div[style*="grid-template-columns:1.1fr 1fr"] {
+    grid-template-columns:1fr !important;
+  }
+  .page-home .card.card--dark > div[style*="grid-template-columns:1.1fr 1fr"] .pattern-globe { min-height:320px !important; }
+  .page-home .layout-sidebar { grid-template-columns:1fr !important; }
+  .page-home .hero-content { max-width:none !important; }
+
+  .page-service-detail .service-reference-detail__hero { grid-template-columns:1fr 1fr !important; }
+  .page-service-detail .service-reference-detail__media,
+  .page-service-detail .service-reference-detail__media img { min-height:480px !important; }
+  .page-service-detail .service-reference-detail__included-grid { grid-template-columns:1fr !important; }
+  .page-service-detail .service-reference-process { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+}
+
+/* ---------- 16. Global 360px responsive hardening ---------- */
+@media (max-width:767px) {
+  .container { width:calc(100% - 28px) !important; padding-inline:0 !important; }
+  .section { padding-top:clamp(2.5rem,10vw,3.5rem) !important; padding-bottom:clamp(2.5rem,10vw,3.5rem) !important; }
+  .heading-1,.hero-title,.page-hero__title { font-size:clamp(2rem,10vw,2.8rem) !important; overflow-wrap:anywhere; }
+  .heading-2 { font-size:clamp(1.65rem,7.5vw,2.2rem) !important; }
+  .split, .layout-sidebar, .grid.grid-2, .grid.grid-3, .grid.grid-4 { grid-template-columns:1fr !important; }
+  .hero-actions, .head-office-location__actions { width:100%; align-items:stretch !important; }
+  .hero-actions .btn, .head-office-location__actions .btn { width:100% !important; justify-content:center !important; }
+  .card.card--dark { padding:1.35rem !important; }
+  .site-header .container { width:100% !important; padding-inline:14px !important; }
+  .header-logo__text { font-size:1.02rem !important; }
+  .header-tools { gap:.4rem !important; }
+  .header-tools > .icon-btn:not(.hamburger), .header-tools > .header-cta { display:none !important; }
+  .mobile-menu-slide { width:min(88vw,330px) !important; max-width:330px !important; }
+  .mobile-menu__nav { overflow-y:auto; }
+
+  .page-home .hero .split,
+  .page-home .split { grid-template-columns:1fr !important; }
+  .page-home .converter { width:100% !important; }
+  .page-home .converter__fields-row { grid-template-columns:1fr !important; }
+  .page-home .rate-ticker { grid-template-columns:1fr !important; }
+
+  .page-service-detail .service-detail-page__container { width:calc(100% - 24px) !important; }
+  .page-service-detail .service-reference-detail__hero,
+  .page-service-detail .service-reference-detail__info-grid,
+  .page-service-detail .service-reference-detail__included-grid,
+  .page-service-detail .service-reference-process { grid-template-columns:1fr !important; }
+  .page-service-detail .service-reference-detail__media,
+  .page-service-detail .service-reference-detail__media img { min-height:260px !important; max-height:340px !important; }
+  .page-service-detail .service-reference-detail__content { padding:1.25rem !important; }
+  .page-service-detail .service-reference-detail__content h1 { font-size:clamp(1.9rem,10vw,2.6rem) !important; }
+  .page-service-detail .service-reference-detail__card { padding:1.2rem !important; }
+
+  .branches-page .branches-main-layout #branchesGrid,
+  .branches-page #branchesGrid { grid-template-columns:1fr !important; }
+  .branches-page .branch-card__header { min-height:0 !important; }
+  .branches-page .branch-card__address { min-height:0 !important; }
+  .branches-page .branch-card__meta { grid-template-columns:1fr !important; }
+  .branches-page .branch-card__services { min-height:0 !important; }
+  .branches-page .branch-card__footer { align-items:stretch !important; }
+  .branches-page .branch-card__link { justify-content:center; }
+
+  .blog-page .blog-grid-v2 { grid-template-columns:1fr !important; }
+  .blog-page .blog-featured-v2 { grid-template-columns:1fr !important; }
+  .blog-page .blog-featured-v2__content { padding:1.25rem !important; }
+  .blog-detail-page .blog-related__item { grid-template-columns:82px minmax(0,1fr) !important; }
+
+  .policy-page .page-hero { padding-top:calc(var(--header-height) + 1.75rem) !important; padding-bottom:1.75rem !important; }
+  .auth-page .auth-wrap { grid-template-columns:1fr !important; }
+  .page-staff-login .auth-visual { min-height:340px !important; padding:1.5rem !important; }
+}
+
+@media (max-width:380px) {
+  .container { width:calc(100% - 22px) !important; }
+  .btn { max-width:100%; white-space:normal; }
+  .filter-chips { gap:.45rem !important; }
+  .filter-chip { font-size:.78rem !important; padding:.55rem .7rem !important; }
+  .page-home .grid.grid-4,
+  .page-home .grid.grid-3 { grid-template-columns:1fr !important; }
+  .blog-detail-page .blog-related__item { grid-template-columns:1fr !important; }
+  .blog-detail-page .blog-related__item img { width:100% !important; height:auto !important; aspect-ratio:16/9; grid-row:auto !important; }
+}
+
+/* ---------- 17. Predictable LTR / RTL alignment ---------- */
+html[dir="ltr"] body { direction:ltr !important; }
+html[dir="ltr"] :is(.section-head:not(.section-head--center), .service-card__body, .branch-card, .blog-card__body, .blog-card-v2__body, .service-reference-detail__content, .service-reference-detail__card, .auth-card__inner) {
+  text-align:left !important;
+}
+html[dir="ltr"] .section-head--center,
+html[dir="ltr"] .text-center,
+html[dir="ltr"] .policy-page .page-hero__content { text-align:center !important; }
+html[dir="ltr"] .breadcrumb { direction:ltr !important; }
+html[dir="ltr"] .header-nav { direction:ltr !important; }
+html[dir="ltr"] .service-card__link i,
+html[dir="ltr"] .branch-card__link i { transform:none !important; }
+
+html[dir="rtl"] body { direction:rtl !important; }
+html[dir="rtl"] :is(.service-card__body, .branch-card, .blog-card__body, .blog-card-v2__body, .service-reference-detail__content, .service-reference-detail__card, .auth-card__inner) {
+  text-align:right !important;
+}
+html[dir="rtl"] .service-card__link i,
+html[dir="rtl"] .branch-card__link i { transform:scaleX(-1) !important; }
+html[dir="rtl"] .page-service-detail .service-reference-detail__feature-list li,
+html[dir="rtl"] .page-service-detail .service-reference-detail__simple-list li { flex-direction:row !important; }
+
+/* Any reveal item must remain visible if animation setup is interrupted. */
+@media (prefers-reduced-motion:reduce) {
+  .reveal,.reveal-left,.reveal-right,.reveal-scale,.fx-animate { opacity:1 !important; transform:none !important; visibility:visible !important; }
+}
+
+
+/* ---------- Home 2 travel money planner visibility refinement ---------- */
+.page-home2 .live-rates-band {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(148, 180, 196, 0.18);
+  border-bottom: 1px solid rgba(148, 180, 196, 0.18);
+}
+.page-home2 .live-rates-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+.page-home2 .live-rates-band > .container {
+  position: relative;
+  z-index: 1;
+}
+.page-home2 .live-rates-band .travel-planner {
+  border-radius: 24px;
+  padding: 1.15rem 0 0;
+}
+.page-home2 .live-rates-band .converter__field {
+  min-width: 0;
+}
+.page-home2 .live-rates-band .converter__field-amount,
+.page-home2 .live-rates-band .form-select,
+.page-home2 .live-rates-band .form-input {
+  width: 100%;
+  min-height: 64px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color var(--duration-fast) var(--ease-default), box-shadow var(--duration-fast) var(--ease-default), background-color var(--duration-fast) var(--ease-default), color var(--duration-fast) var(--ease-default);
+}
+.page-home2 .live-rates-band .converter__field-amount:focus,
+.page-home2 .live-rates-band .form-select:focus,
+.page-home2 .live-rates-band .form-input:focus {
+  outline: none;
+}
+.page-home2 .live-rates-band #tripEstimate {
+  display: inline-flex;
+  align-items: center;
+  min-height: 64px;
+  width: 100%;
+}
+.page-home2 .live-rates-band .btn-outline-white {
+  min-height: 64px;
+  border-radius: 18px;
+  font-weight: 700;
+}
+
+html:not(.dark) .page-home2 .live-rates-band,
+html[data-theme="light"] .page-home2 .live-rates-band {
+  color: #102839 !important;
+  background: linear-gradient(180deg, #f2f7fa 0%, #eef4f7 100%) !important;
+}
+html:not(.dark) .page-home2 .live-rates-band::before,
+html[data-theme="light"] .page-home2 .live-rates-band::before {
+  background:
+    radial-gradient(circle at top right, rgba(16, 163, 125, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0));
+}
+html:not(.dark) .page-home2 .live-rates-band :is(.heading-3, .converter__field-label),
+html[data-theme="light"] .page-home2 .live-rates-band :is(.heading-3, .converter__field-label) {
+  color: #163549 !important;
+  -webkit-text-fill-color: #163549 !important;
+}
+html:not(.dark) .page-home2 .live-rates-band .rates-meta,
+html:not(.dark) .page-home2 .live-rates-band .rates-meta i,
+html[data-theme="light"] .page-home2 .live-rates-band .rates-meta,
+html[data-theme="light"] .page-home2 .live-rates-band .rates-meta i {
+  color: #527285 !important;
+}
+html:not(.dark) .page-home2 .live-rates-band .converter__field-amount,
+html:not(.dark) .page-home2 .live-rates-band .form-select,
+html:not(.dark) .page-home2 .live-rates-band .form-input,
+html[data-theme="light"] .page-home2 .live-rates-band .converter__field-amount,
+html[data-theme="light"] .page-home2 .live-rates-band .form-select,
+html[data-theme="light"] .page-home2 .live-rates-band .form-input {
+  background: rgba(255,255,255,0.96) !important;
+  color: #173246 !important;
+  border-color: rgba(119, 149, 166, 0.34) !important;
+  box-shadow: 0 10px 26px rgba(14, 42, 59, 0.08);
+}
+html:not(.dark) .page-home2 .live-rates-band .converter__field-amount:focus,
+html:not(.dark) .page-home2 .live-rates-band .form-select:focus,
+html:not(.dark) .page-home2 .live-rates-band .form-input:focus,
+html[data-theme="light"] .page-home2 .live-rates-band .converter__field-amount:focus,
+html[data-theme="light"] .page-home2 .live-rates-band .form-select:focus,
+html[data-theme="light"] .page-home2 .live-rates-band .form-input:focus {
+  border-color: rgba(16, 163, 125, 0.85) !important;
+  box-shadow: 0 0 0 4px rgba(16, 163, 125, 0.14), 0 12px 28px rgba(14, 42, 59, 0.08) !important;
+}
+html:not(.dark) .page-home2 .live-rates-band #tripEstimate,
+html[data-theme="light"] .page-home2 .live-rates-band #tripEstimate {
+  color: #0f9f76 !important;
+}
+html:not(.dark) .page-home2 .live-rates-band .btn-outline-white,
+html[data-theme="light"] .page-home2 .live-rates-band .btn-outline-white {
+  background: #f7fbfd !important;
+  color: #103246 !important;
+  border-color: rgba(92, 122, 140, 0.42) !important;
+}
+html:not(.dark) .page-home2 .live-rates-band .btn-outline-white:hover,
+html:not(.dark) .page-home2 .live-rates-band .btn-outline-white:focus-visible,
+html[data-theme="light"] .page-home2 .live-rates-band .btn-outline-white:hover,
+html[data-theme="light"] .page-home2 .live-rates-band .btn-outline-white:focus-visible {
+  background: #ffffff !important;
+  color: #0b2433 !important;
+  border-color: rgba(16, 163, 125, 0.85) !important;
+}
+
+html.dark .page-home2 .live-rates-band,
+html[data-theme="dark"] .page-home2 .live-rates-band {
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #061a26 0%, #082130 100%) !important;
+}
+html.dark .page-home2 .live-rates-band::before,
+html[data-theme="dark"] .page-home2 .live-rates-band::before {
+  background:
+    radial-gradient(circle at top right, rgba(24, 173, 133, 0.11), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+html.dark .page-home2 .live-rates-band :is(.heading-3, .converter__field-label),
+html[data-theme="dark"] .page-home2 .live-rates-band :is(.heading-3, .converter__field-label) {
+  color: #f8fdff !important;
+  -webkit-text-fill-color: #f8fdff !important;
+}
+html.dark .page-home2 .live-rates-band .rates-meta,
+html.dark .page-home2 .live-rates-band .rates-meta i,
+html[data-theme="dark"] .page-home2 .live-rates-band .rates-meta,
+html[data-theme="dark"] .page-home2 .live-rates-band .rates-meta i {
+  color: #9ec2d3 !important;
+}
+html.dark .page-home2 .live-rates-band .converter__field-amount,
+html.dark .page-home2 .live-rates-band .form-select,
+html.dark .page-home2 .live-rates-band .form-input,
+html[data-theme="dark"] .page-home2 .live-rates-band .converter__field-amount,
+html[data-theme="dark"] .page-home2 .live-rates-band .form-select,
+html[data-theme="dark"] .page-home2 .live-rates-band .form-input {
+  background: rgba(9, 28, 39, 0.94) !important;
+  color: #f5fbff !important;
+  border-color: rgba(102, 146, 168, 0.34) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 10px 24px rgba(0,0,0,0.2);
+}
+html.dark .page-home2 .live-rates-band .converter__field-amount:focus,
+html.dark .page-home2 .live-rates-band .form-select:focus,
+html.dark .page-home2 .live-rates-band .form-input:focus,
+html[data-theme="dark"] .page-home2 .live-rates-band .converter__field-amount:focus,
+html[data-theme="dark"] .page-home2 .live-rates-band .form-select:focus,
+html[data-theme="dark"] .page-home2 .live-rates-band .form-input:focus {
+  border-color: rgba(53, 216, 162, 0.9) !important;
+  box-shadow: 0 0 0 4px rgba(53, 216, 162, 0.16), 0 12px 28px rgba(0,0,0,0.28) !important;
+}
+html.dark .page-home2 .live-rates-band #tripEstimate,
+html[data-theme="dark"] .page-home2 .live-rates-band #tripEstimate {
+  color: #57ebbc !important;
+}
+html.dark .page-home2 .live-rates-band .btn-outline-white,
+html[data-theme="dark"] .page-home2 .live-rates-band .btn-outline-white {
+  background: rgba(255,255,255,0.03) !important;
+  color: #ffffff !important;
+  border-color: rgba(180, 214, 229, 0.34) !important;
+}
+html.dark .page-home2 .live-rates-band .btn-outline-white:hover,
+html.dark .page-home2 .live-rates-band .btn-outline-white:focus-visible,
+html[data-theme="dark"] .page-home2 .live-rates-band .btn-outline-white:hover,
+html[data-theme="dark"] .page-home2 .live-rates-band .btn-outline-white:focus-visible {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(53, 216, 162, 0.86) !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 900px) {
+  .page-home2 .live-rates-band .grid.grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .page-home2 .live-rates-band .grid.grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .page-home2 .live-rates-band .travel-planner {
+    padding-top: 1rem;
+  }
+}
+
+
+/* ---------- Home 2: testimonial portraits + aligned travel money cards ---------- */
+.page-home2 .testimonial-card__author {
+  align-items:center !important;
+  gap:.9rem !important;
+}
+.page-home2 .testimonial-card__avatar {
+  width:50px !important;
+  height:50px !important;
+  min-width:50px !important;
+  flex:0 0 50px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  border:2px solid rgba(53,216,162,.45) !important;
+  background:var(--color-surface) !important;
+  box-shadow:0 6px 16px rgba(0,0,0,.13) !important;
+}
+.page-home2 .testimonial-card__author > div {
+  min-width:0;
+}
+.page-home2 .testimonial-card__name,
+.page-home2 .testimonial-card__role {
+  overflow-wrap:anywhere;
+}
+
+.page-home2 .travel-options-grid {
+  align-items:stretch !important;
+}
+.page-home2 .travel-option-card {
+  height:100% !important;
+  min-width:0 !important;
+  display:grid !important;
+  grid-template-rows:auto 34px auto minmax(7.1rem,auto) 1fr auto !important;
+  align-content:stretch !important;
+  gap:0 !important;
+}
+.page-home2 .travel-option-card .card__icon {
+  margin-bottom:.75rem !important;
+}
+.page-home2 .travel-option-card__badge-slot {
+  min-height:34px !important;
+  display:flex !important;
+  align-items:center !important;
+  margin:0 0 .45rem !important;
+}
+.page-home2 .travel-option-card__badge-slot--empty {
+  visibility:hidden !important;
+}
+.page-home2 .travel-option-card .card__title {
+  min-height:2.8rem !important;
+  margin:0 0 .75rem !important;
+  display:flex;
+  align-items:flex-start;
+}
+.page-home2 .travel-option-card .card__text {
+  min-height:7.1rem !important;
+  margin:0 !important;
+  line-height:1.65 !important;
+}
+.page-home2 .travel-option-card .feature-list {
+  align-self:start !important;
+  width:100% !important;
+  margin:1.35rem 0 1.45rem !important;
+}
+.page-home2 .travel-option-card .feature-list li {
+  min-height:54px !important;
+  display:flex !important;
+  align-items:center !important;
+  margin:0 0 .7rem !important;
+}
+.page-home2 .travel-option-card > .btn {
+  align-self:end !important;
+  justify-self:start !important;
+  margin-top:auto !important;
+}
+.page-home2 .travel-option-card--popular {
+  border-color:rgba(30,196,146,.48) !important;
+  box-shadow:0 14px 34px rgba(10,110,84,.10) !important;
+}
+
+@media (max-width:1100px) {
+  .page-home2 .travel-option-card {
+    grid-template-rows:auto 34px auto minmax(8.4rem,auto) 1fr auto !important;
+  }
+  .page-home2 .travel-option-card .card__text {
+    min-height:8.4rem !important;
+  }
+}
+@media (max-width:767px) {
+  .page-home2 .travel-options-grid {
+    grid-template-columns:1fr !important;
+  }
+  .page-home2 .travel-option-card {
+    grid-template-rows:auto 34px auto auto auto auto !important;
+  }
+  .page-home2 .travel-option-card .card__title,
+  .page-home2 .travel-option-card .card__text {
+    min-height:0 !important;
+  }
+  .page-home2 .travel-option-card .feature-list li {
+    min-height:0 !important;
+  }
+  .page-home2 .travel-option-card > .btn {
+    width:100% !important;
+    justify-content:center !important;
+  }
+}
+
+
+/* Mobile navbar: keep the profile icon visible beside the hamburger. */
+@media (max-width: 767px) {
+  .site-header .header-tools > .mobile-profile-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    flex: 0 0 38px !important;
+  }
+  .site-header .header-tools > .hamburger {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header .container {
+    gap: .35rem !important;
+  }
+  .site-header .header-tools {
+    gap: .3rem !important;
+  }
+  .site-header .header-tools > .mobile-profile-btn,
+  .site-header .header-tools > .hamburger {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    flex-basis: 36px !important;
+  }
+}
