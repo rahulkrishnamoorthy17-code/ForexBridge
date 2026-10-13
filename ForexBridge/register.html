@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script>
+(function(){
+  try {
+    var savedTheme = localStorage.getItem('forexbridge_theme');
+    var theme = savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    var savedDir = localStorage.getItem('forexbridge_direction') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+  } catch(e){}
+})();
+</script>
+<title>Create an Account — ForexBridge Template Demo</title>
+<meta content="Create a ForexBridge account. This is a demonstration registration form — no real data is stored." name="description"/>
+<meta content="ForexBridge register, create account, forex sign up" name="keywords"/>
+<link href="https://www.example.com/register.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="ForexBridge" property="og:site_name"/>
+<meta content="Create an Account — ForexBridge Template Demo" property="og:title"/>
+<meta content="Demonstration registration form for ForexBridge. No real data is stored." property="og:description"/>
+<meta content="assets/images/services/service-corporate-forex.jpg" property="og:image"/>
+<meta content="https://www.example.com/register.html" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Create an Account — ForexBridge Template Demo" name="twitter:title"/>
+<meta content="Demonstration registration form for ForexBridge. No real data is stored." name="twitter:description"/>
+<meta content="assets/images/services/service-corporate-forex.jpg" name="twitter:image"/>
+<link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="assets/css/extra.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Create an Account — ForexBridge Template Demo",
+    "description": "Demonstration registration form for ForexBridge. No real data is stored.",
+    "url": "https://www.example.com/register.html"
+  }
+  </script>
+<link href="assets/css/final-review-fixes.css" rel="stylesheet"/>
+<link href="assets/css/client-final-review.css" rel="stylesheet"/><link href="assets/css/client-step2-visuals.css" rel="stylesheet"/><link href="assets/css/auth-layout-fix.css" rel="stylesheet"/>
+<script>
+(function(){try{var t=localStorage.getItem("forex-theme");if(t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");document.documentElement.classList.add("dark");}var r=localStorage.getItem("forex-rtl");if(r==="true"){document.documentElement.setAttribute("dir","rtl");document.documentElement.setAttribute("lang","ar");}}catch(_){}})();
+</script>
+</head>
+<body class="auth-page auth-dedicated">
+<!-- ============ HEADER ============ -->
+<main><a aria-label="ForexBridge home" class="auth-page-brand brand-logo" href="index.html"><span aria-hidden="true" class="auth-page-brand__mark logo-mark"><i class="fas fa-arrow-right-arrow-left"></i></span><span class="auth-page-brand__text brand-logo__text">Forex<span class="brand-logo__accent text-accent">Bridge</span></span></a><div aria-label="Display controls" class="auth-page-controls"><button aria-label="Switch theme" class="auth-control-btn" data-theme-toggle="" title="Toggle light/dark mode" type="button"><i aria-hidden="true" class="fas fa-moon"></i></button><button aria-label="Toggle RTL/LTR" aria-pressed="false" class="auth-control-btn auth-control-btn--rtl" data-rtl-toggle="" title="Toggle RTL/LTR" type="button"><span class="toggle-label">RTL</span></button></div>
+<div class="auth-wrap">
+<!-- LEFT — branded visual panel -->
+<div class="auth-visual">
+<div aria-hidden="true" class="auth-visual__bg"></div>
+<div aria-hidden="true" class="auth-visual__grid"></div>
+<div class="auth-visual__content">
+<h1>Start Your ForexBridge Journey</h1>
+<p>Create an account to access exchange tools, rate alerts and branch bookings.</p>
+<div class="auth-visual__quote">"<span class="highlight">Transparency</span> before every transaction."</div>
+</div>
+<div class="auth-visual__media">
+<img alt="Global currency exchange illustration" class="auth-visual__img" height="320" loading="lazy" src="assets/images/auth-hero-fintech.webp" width="480"/>
+</div>
+<div class="auth-visual__foot">
+<a href="rates.html">View Exchange Rates</a> · <a href="branches.html">Find a Branch</a>
+</div>
+</div>
+<!-- RIGHT — register card -->
+<div class="auth-card">
+<div class="auth-card__inner">
+<h2 class="heading-2 mb-1" style="margin-bottom:var(--space-1-5);">Create an account</h2>
+<p class="text-muted mb-8" style="margin-bottom:var(--space-8);">Template demo — no real registration happens.</p>
+<form data-validate-form="" novalidate="">
+<div style="margin-bottom:var(--space-5);">
+<label class="form-label form-label--required" for="regName">Full name</label>
+<input class="form-input" id="regName" placeholder="Arjun Mehta" required="" type="text"/>
+<span class="field-error" hidden="" role="alert"></span>
+</div>
+<div style="margin-bottom:var(--space-5);">
+<label class="form-label form-label--required" for="regEmail">Email address</label>
+<input class="form-input" data-rule="email" id="regEmail" placeholder="you@example.com" required="" type="email"/>
+<span class="field-error" hidden="" role="alert"></span>
+</div>
+<div style="margin-bottom:var(--space-5);">
+<label class="form-label" for="regPhone">Phone number</label>
+<input class="form-input" data-rule="phone" id="regPhone" inputmode="numeric" maxlength="15" pattern="[0-9]*" placeholder="919876543210" type="tel"/>
+<span class="field-error" hidden="" role="alert"></span>
+</div>
+<div style="margin-bottom:var(--space-5);">
+<label class="form-label form-label--required" for="regPassword">Password</label>
+<div class="password-field">
+<input class="form-input" data-rule="minlength:8" id="regPassword" placeholder="Min. 8 characters" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="password-toggle" type="button">
+<i aria-hidden="true" class="fas fa-eye"></i>
+</button>
+</div>
+<span class="field-error" hidden="" role="alert"></span>
+</div>
+<div style="margin-bottom:var(--space-5);">
+<label class="form-label form-label--required" for="regConfirm">Confirm password</label>
+<div class="password-field">
+<input class="form-input" id="regConfirm" placeholder="Re-enter password" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="password-toggle" type="button">
+<i aria-hidden="true" class="fas fa-eye"></i>
+</button>
+</div>
+<span class="field-error" hidden="" role="alert"></span>
+</div>
+<div style="margin-bottom:var(--space-6);">
+<label class="form-label" for="regOrg">Organisation</label>
+<input class="form-input" id="regOrg" placeholder="Company or institution (optional)" type="text"/>
+</div>
+<div class="inline-alert inline-alert--info mb-6" style="margin-bottom:var(--space-6);">
+<i aria-hidden="true" class="fas fa-circle-info"></i>
+<span>This is a demonstration form. Wire your backend to persist registrations.</span>
+</div>
+<button class="btn btn-primary w-full" style="margin-bottom:var(--space-4);" type="submit">
+<i aria-hidden="true" class="fas fa-user-plus"></i> Create Account
+            </button>
+<div class="auth-divider">
+  <span>or continue with</span>
+</div>
+<div class="auth-social-row">
+  <button aria-label="Continue with Google" class="auth-social-btn" data-social-provider="Google" type="button">
+    <svg aria-hidden="true" class="auth-social-icon" height="18" viewbox="0 0 24 24" width="18"><path d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path><path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z" fill="#4285F4"></path><path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2s.7 5.5 1.9 7.9l3.7-2.9c-.2-.7-.4-1.5-.4-2.4z" fill="#FBBC05"></path><path d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 17C3.7 20.7 7.5 23.5 12 23.5z" fill="#34A853"></path></svg>
+    <span>Google</span>
+  </button>
+  <button aria-label="Continue with Facebook" class="auth-social-btn" data-social-provider="Facebook" type="button">
+    <svg aria-hidden="true" class="auth-social-icon" fill="#1877F2" height="18" viewbox="0 0 24 24" width="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+    <span>Facebook</span>
+  </button>
+  <button aria-label="Continue with Apple" class="auth-social-btn" data-social-provider="Apple" type="button">
+    <svg aria-hidden="true" class="auth-social-icon" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.6.7-.1.13 1.83-1 2.95 1.07.08 2.16-.55 2.81-1.35"></path></svg>
+    <span>Apple</span>
+  </button>
+</div>
+</form>
+<div style="text-align:center;margin-bottom:var(--space-4);">
+<a class="text-small text-accent" href="login.html">Already have an account? Sign in</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ============ FOOTER ============ -->
+<button aria-label="Back to top" class="btn btn-primary" data-back-to-top="" type="button">
+<i aria-hidden="true" class="fas fa-arrow-up"></i>
+</button>
+<script src="assets/js/main.js"></script>
+<script>
+    (function () {
+      try {
+        var form = document.querySelector("[data-validate-form]");
+        var pw = document.getElementById("regPassword");
+        var confirm = document.getElementById("regConfirm");
+
+        /* Password toggle */
+        document.querySelectorAll(".password-field .password-toggle").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var input = btn.parentElement.querySelector("input");
+            var icon = btn.querySelector("i");
+            if (!input || !icon) return;
+            if (input.type === "password") {
+              input.type = "text";
+              icon.classList.remove("fa-eye");
+              icon.classList.add("fa-eye-slash");
+            } else {
+              input.type = "password";
+              icon.classList.remove("fa-eye-slash");
+              icon.classList.add("fa-eye");
+            }
+          });
+        });
+
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+          try {
+            if (!ForexApp.validateForm(form)) return;
+
+            if (pw && confirm && pw.value !== confirm.value) {
+              e.preventDefault();
+              ForexApp.showToast("Passwords do not match", { type: "error", duration: 3000 });
+              return;
+            }
+
+            e.preventDefault();
+            ForexApp.showToast("Account created (demo)", { type: "success", duration: 1200 });
+            setTimeout(function () {
+              window.location.href = "login.html";
+            }, 1200);
+          } catch (_) {
+            /* swallow */
+          }
+        });
+      } catch (_) {
+        /* swallow */
+      }
+    })();
+  </script>
+</body>
+</html>

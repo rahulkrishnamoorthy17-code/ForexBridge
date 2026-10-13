@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <defs>
+    <linearGradient id="b9_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081E2C"/>
+      <stop offset="50%" stop-color="#0B2B3A"/>
+      <stop offset="100%" stop-color="#071923"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#b9_bg)"/>
+  <g transform="translate(100, 100)">
+    <rect width="700" height="360" rx="20" fill="#0E2432" stroke="#1D4E63" stroke-width="1.5"/>
+    <text x="40" y="45" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Pre-Departure Travel Forex Checklist</text>
+    
+    <g transform="translate(40, 80)">
+      <rect width="190" height="230" rx="14" fill="#091C26" stroke="#194557" stroke-width="1"/>
+      <text x="95" y="40" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#10B981" text-anchor="middle">1. Documents</text>
+      <text x="25" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Valid Passport</text>
+      <text x="25" y="110" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Confirmed Visa</text>
+      <text x="25" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Flight Ticket Copy</text>
+      <text x="25" y="170" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• PAN Identification</text>
+    </g>
+
+    <g transform="translate(255, 80)">
+      <rect width="190" height="230" rx="14" fill="#091C26" stroke="#10B981" stroke-width="1.5"/>
+      <text x="95" y="40" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#34D399" text-anchor="middle">2. Currency Mix</text>
+      <text x="25" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• 70% Travel Card</text>
+      <text x="25" y="110" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• 30% Local Cash</text>
+      <text x="25" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Multi-Currency Wallets</text>
+      <text x="25" y="170" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Small Change Notes</text>
+    </g>
+
+    <g transform="translate(470, 80)">
+      <rect width="190" height="230" rx="14" fill="#091C26" stroke="#194557" stroke-width="1"/>
+      <text x="95" y="40" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#60A5FA" text-anchor="middle">3. Security</text>
+      <text x="25" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Set ATM PIN</text>
+      <text x="25" y="110" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• App Rate Alert On</text>
+      <text x="25" y="140" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• 24/7 Helpline Saved</text>
+      <text x="25" y="170" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E8EEF2">• Backup Card Stored</text>
+    </g>
+  </g>
+</svg>

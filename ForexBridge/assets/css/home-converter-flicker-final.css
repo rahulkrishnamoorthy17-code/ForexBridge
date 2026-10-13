@@ -1,0 +1,186 @@
+
+/* ==========================================================
+   ForexBridge — FINAL Home Converter / Hero / Live Rates Fix
+   ========================================================== */
+
+/* 1) Quick Currency Converter:
+   Keep From/To native dropdowns on a stable paint layer.
+   No transition, animation, blur, transform or focus geometry changes. */
+.page-home .converter {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+  animation: none !important;
+  contain: layout paint;
+  isolation: isolate;
+}
+
+html:not(.dark) .page-home .converter,
+html[data-theme="light"] .page-home .converter {
+  background: #ffffff !important;
+}
+
+html.dark .page-home .converter,
+html[data-theme="dark"] .page-home .converter {
+  background: #10191d !important;
+}
+
+.page-home .converter .converter__fields-row {
+  align-items: end !important;
+}
+
+.page-home .converter select.form-select,
+.page-home .converter select[data-converter-from],
+.page-home .converter select[data-converter-to] {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 46px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 10px !important;
+  transform: none !important;
+  translate: none !important;
+  scale: 1 !important;
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-font-smoothing: antialiased;
+  outline-offset: 0 !important;
+  cursor: pointer;
+}
+
+/* Focus/open state must NOT resize or repaint the control. */
+.page-home .converter select.form-select:hover,
+.page-home .converter select.form-select:focus,
+.page-home .converter select.form-select:focus-visible,
+.page-home .converter select.form-select:active,
+.page-home .converter select[data-converter-from]:hover,
+.page-home .converter select[data-converter-from]:focus,
+.page-home .converter select[data-converter-from]:focus-visible,
+.page-home .converter select[data-converter-from]:active,
+.page-home .converter select[data-converter-to]:hover,
+.page-home .converter select[data-converter-to]:focus,
+.page-home .converter select[data-converter-to]:focus-visible,
+.page-home .converter select[data-converter-to]:active {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  outline: none !important;
+  border-width: 1px !important;
+  box-shadow: 0 0 0 3px rgba(13,147,115,.14) !important;
+}
+
+/* Stable light/dark colors while the native dropdown is opened. */
+html:not(.dark) .page-home .converter select,
+html[data-theme="light"] .page-home .converter select {
+  color: #13242c !important;
+  background-color: #ffffff !important;
+  border-color: #cbd7dc !important;
+  color-scheme: light;
+}
+
+html.dark .page-home .converter select,
+html[data-theme="dark"] .page-home .converter select {
+  color: #eef8f7 !important;
+  background-color: #152329 !important;
+  border-color: #38505a !important;
+  color-scheme: dark;
+}
+
+.page-home .converter select option {
+  font: inherit;
+}
+
+/* Disable reveal/compositor animation specifically around the converter. */
+.page-home .hero[data-reveal],
+.page-home .hero .converter,
+.page-home .hero .converter * {
+  animation-name: none !important;
+}
+.page-home .hero[data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 2) Make Home hero slightly larger instead of inserting blank gap. */
+.page-home .hero {
+  min-height: 680px !important;
+  height: auto !important;
+  padding-top: calc(var(--header-height) + 54px) !important;
+  padding-bottom: 54px !important;
+  margin-bottom: 0 !important;
+}
+
+/* 3) Pull Illustrative Demo / Live Rates directly up under hero.
+   No artificial white/empty gap between both sections. */
+.page-home .live-rates-band {
+  position: relative !important;
+  z-index: 3 !important;
+  margin-top: 0 !important;
+  padding-top: 22px !important;
+  padding-bottom: 24px !important;
+}
+
+.page-home .hero + .live-rates-band {
+  margin-top: 0 !important;
+}
+
+.page-home .home-rates-head {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  gap: 8px !important;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .page-home .hero {
+    min-height: 640px !important;
+    padding-top: calc(var(--header-height) + 40px) !important;
+    padding-bottom: 40px !important;
+  }
+  .page-home .live-rates-band {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+  }
+}
+
+/* Mobile: override the old rule that added a margin above Live Rates. */
+@media (max-width: 767.98px) {
+  .page-home .hero {
+    min-height: 0 !important;
+    padding-top: calc(var(--header-height) + 30px) !important;
+    padding-bottom: 32px !important;
+  }
+  .page-home .live-rates-band,
+  .page-home .hero + .live-rates-band {
+    margin-top: 0 !important;
+    padding-top: 18px !important;
+  }
+  .page-home .converter .converter__fields-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-home .converter .converter__fields-row {
+    grid-template-columns: 1fr !important;
+  }
+}

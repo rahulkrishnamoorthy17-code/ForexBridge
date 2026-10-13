@@ -1,0 +1,42 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Global currency exchange concept">
+  <defs><linearGradient id="gJ" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#065F46"/></linearGradient><linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1A2A"/><stop offset="100%" stop-color="#112B3C"/></linearGradient><radialGradient id="gGlow" cx="70%" cy="25%" r="60%"><stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/><stop offset="100%" stop-color="#0D9373" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gBg)"/>
+  <rect width="1200" height="800" fill="url(#gGlow)"/>
+  <g opacity="0.5">
+    <circle cx="600" cy="400" r="300" fill="none" stroke="#10B981" stroke-opacity="0.15" stroke-width="1"/>
+    <circle cx="600" cy="400" r="220" fill="none" stroke="#10B981" stroke-opacity="0.2" stroke-width="1"/>
+    <ellipse cx="600" cy="400" rx="300" ry="110" fill="none" stroke="#D4A574" stroke-opacity="0.15" stroke-width="1" transform="rotate(-12 600 400)"/>
+    <ellipse cx="600" cy="400" rx="300" ry="110" fill="none" stroke="#D4A574" stroke-opacity="0.15" stroke-width="1" transform="rotate(12 600 400)"/>
+  </g>
+  <g transform="translate(600 400)">
+    <circle r="130" fill="#0E2A3A"/>
+    <circle r="130" fill="none" stroke="#10B981" stroke-opacity="0.4" stroke-width="2"/>
+    <path d="M 0 -130 A 130 130 0 0 1 113 -65" fill="none" stroke="#10B981" stroke-opacity="0.35" stroke-width="1.5"/>
+    <path d="M 113 -65 A 130 130 0 0 1 0 130" fill="none" stroke="#10B981" stroke-opacity="0.25" stroke-width="1"/>
+    <path d="M -130 0 A 130 130 0 0 0 130 0" fill="none" stroke="#D4A574" stroke-opacity="0.3" stroke-width="1.5"/>
+    <path d="M -40 -110 C -20 0 20 0 40 110" fill="none" stroke="#10B981" stroke-opacity="0.3" stroke-width="1.5"/>
+    <path d="M 30 -125 C 10 -40 -10 -40 -30 125" fill="none" stroke="#D4A574" stroke-opacity="0.25" stroke-width="1.5"/>
+    <g opacity="0.85">
+      <circle cx="0" cy="0" r="56" fill="url(#gJ)"/>
+      <path d="M -22 0 L 22 0 M 12 -12 L 22 0 L 12 12 M -12 -14 L -22 -2 M -12 14 L -22 2" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+  <g font-family="Georgia, serif" font-weight="bold" fill="#fff" opacity="0.9">
+    <text x="120" y="150" font-size="64" fill="#10B981">&#36;</text>
+    <text x="170" y="135" font-size="40" fill="#D4A574" opacity="0.8">&#8364;</text>
+    <text x="1050" y="180" font-size="56" fill="#D4A574">&#163;</text>
+    <text x="70" y="680" font-size="72" fill="#10B981" opacity="0.7">&#8377;</text>
+    <text x="1080" y="680" font-size="58" fill="#fff" opacity="0.7">&#165;</text>
+  </g>
+  <g opacity="0.28">
+    <path d="M 200 660 Q 600 500 1000 660" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="10 10"/>
+    <circle cx="200" cy="660" r="8" fill="#10B981"/>
+    <circle cx="1000" cy="660" r="8" fill="#D4A574"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="90" y="300" width="140" height="54" rx="12" fill="#0D9373" opacity="0.25"/>
+    <text x="160" y="336" font-size="22" fill="#fff" text-anchor="middle">USD / INR</text>
+    <rect x="970" y="430" width="150" height="54" rx="12" fill="#0D9373" opacity="0.25"/>
+    <text x="1045" y="466" font-size="22" fill="#fff" text-anchor="middle">EUR / INR</text>
+  </g>
+</svg>

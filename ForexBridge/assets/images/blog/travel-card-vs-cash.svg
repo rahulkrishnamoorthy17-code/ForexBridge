@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <defs>
+    <linearGradient id="b5_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081C26"/>
+      <stop offset="50%" stop-color="#0C2633"/>
+      <stop offset="100%" stop-color="#081A24"/>
+    </linearGradient>
+    <linearGradient id="b5_cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#b5_bg)"/>
+  <!-- Travel Card Visual (Left) -->
+  <g transform="translate(140, 140)">
+    <rect width="280" height="175" rx="16" fill="url(#b5_cardGrad)" stroke="#34D399" stroke-width="1.5"/>
+    <circle cx="45" cy="45" r="16" fill="#FFFFFF" opacity="0.2"/>
+    <text x="45" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">FX</text>
+    <text x="235" y="45" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">MULTI-CCY</text>
+    <rect x="35" y="80" width="35" height="25" rx="4" fill="#F59E0B"/>
+    <text x="35" y="145" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600" fill="#FFFFFF">•••• 8824</text>
+    <text x="210" y="145" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E8EEF2">09/29</text>
+    <text x="140" y="220" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Prepaid Travel Card (70%)</text>
+    <text x="140" y="242" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#8FB5CC" text-anchor="middle">Safe, Rate-Locked, App Reload</text>
+  </g>
+  <!-- VS text -->
+  <text x="450" y="240" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#5A8BA8" text-anchor="middle">VS</text>
+  <!-- Foreign Cash Visual (Right) -->
+  <g transform="translate(480, 140)">
+    <!-- Banknote stack -->
+    <rect x="20" y="20" width="260" height="135" rx="8" fill="#133D2D" stroke="#10B981" stroke-width="1" opacity="0.6"/>
+    <rect x="10" y="10" width="260" height="135" rx="8" fill="#164A37" stroke="#10B981" stroke-width="1" opacity="0.8"/>
+    <rect x="0" y="0" width="260" height="135" rx="8" fill="#1A5C43" stroke="#34D399" stroke-width="1.5"/>
+    <circle cx="130" cy="67" r="30" fill="none" stroke="#6EE7B7" stroke-width="1.5"/>
+    <text x="130" y="74" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">$100</text>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#6EE7B7">USD</text>
+    <text x="235" y="120" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#6EE7B7">100</text>
+    <text x="130" y="220" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Currency Cash (30%)</text>
+    <text x="130" y="242" font-family="Inter, sans-serif" font-size="12" font-weight="400" fill="#8FB5CC" text-anchor="middle">Taxis, Tips, Street Markets</text>
+  </g>
+</svg>

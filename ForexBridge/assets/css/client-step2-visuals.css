@@ -1,0 +1,121 @@
+
+/* ForexBridge step 2: auth branding, image-led cards, consistent heroes */
+
+/* Auth shell branding uses the previously empty top strip. */
+.auth-page .auth-wrap{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  grid-template-rows:auto 1fr!important;
+  padding-top:0!important;
+}
+.auth-page .auth-shell-brand{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-height:78px;
+  padding:14px 24px;
+  background:linear-gradient(90deg,#f7fbfa 0%,#ffffff 62%,#f8fbfc 100%);
+  border-bottom:1px solid rgba(14,61,72,.10);
+  text-decoration:none;
+  font-family:var(--font-display);
+  font-size:clamp(1.25rem,2vw,1.55rem);
+  font-weight:800;
+  color:#102637!important;
+  -webkit-text-fill-color:#102637!important;
+  position:relative;
+  z-index:4;
+}
+.auth-page .auth-shell-brand__mark{
+  width:44px;height:44px;min-width:44px;border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;background:linear-gradient(135deg,#18b98a,#08795e);
+  box-shadow:0 8px 22px rgba(13,147,115,.22);
+}
+.auth-page .auth-shell-brand__text{white-space:nowrap;letter-spacing:-.025em;}
+.auth-page .auth-visual,.auth-page .auth-card{min-height:0!important;}
+.auth-page .auth-visual{
+  background-image:linear-gradient(135deg,rgba(2,18,25,.86),rgba(4,42,48,.82)),url('../images/services-hero-banner.jpg')!important;
+  background-size:cover!important;background-position:center!important;
+}
+.auth-page .auth-visual__bg,.auth-page .auth-visual__grid{opacity:.18!important;}
+html.dark .auth-page .auth-shell-brand,html[data-theme="dark"] .auth-page .auth-shell-brand{
+  background:linear-gradient(90deg,#08171e,#0a2028)!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border-color:rgba(255,255,255,.08)!important;
+}
+
+/* Shared hero language: same height/rhythm, relevant photography, readable overlay. */
+:root{--client-hero-h:560px;--client-hero-h-tablet:520px;--client-hero-h-mobile:460px;}
+body{--client-hero-image:url('../images/services-hero-banner.jpg');}
+.page-home{--client-hero-image:url('../images/hero-home1.jpg');}
+.page-home2{--client-hero-image:url('../images/hero-home2.jpg');}
+.page-about{--client-hero-image:url('../images/about-story.jpg');}
+.page-services{--client-hero-image:url('../images/services-hero-banner.jpg');}
+.page-rates{--client-hero-image:url('../images/blog/exchange-rates-explained.jpg');}
+.page-rate-calculator{--client-hero-image:url('../images/blog/buy-vs-sell-rates.jpg');}
+.branches-page{--client-hero-image:url('../images/branch-office.jpg');}
+.blog-page{--client-hero-image:url('../images/blog/blog-forex-expert-guidance.jpg');}
+.page-contact{--client-hero-image:url('../images/contact-head-office.jpg');}
+.page-pricing{--client-hero-image:url('../images/services/service-rate-consultation.jpg');}
+.policy-page{--client-hero-image:url('../images/about-operations.jpg');}
+
+.page-home .hero,.page-home2 .hero,.page-rates .hero,.page-rate-calculator .page-hero,
+.page-hero,.blog-page .blog-page-hero{
+  min-height:var(--client-hero-h)!important;
+  height:var(--client-hero-h)!important;
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  overflow:hidden!important;
+  background-image:linear-gradient(105deg,rgba(2,16,24,.88),rgba(4,28,38,.72)),var(--client-hero-image)!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  padding-top:calc(var(--header-height) + 36px)!important;
+  padding-bottom:36px!important;
+}
+.page-home .hero-bg,.page-home2 .hero-bg,.page-rates .hero-bg,.page-rate-calculator .hero-bg,
+.page-hero__bg{
+  background:linear-gradient(105deg,rgba(2,16,24,.76),rgba(4,28,38,.46))!important;
+  opacity:1!important;
+}
+.page-home .hero-bg>*,.page-home2 .hero-bg>*,.page-rates .hero-bg>*,.page-rate-calculator .hero-bg>*{opacity:.30!important;}
+.page-hero__bg::before,.page-hero__bg::after{opacity:.28!important;}
+.blog-page .blog-page-hero::after{background:linear-gradient(90deg,rgba(2,16,24,.88),rgba(2,16,24,.55))!important;}
+
+.page-hero__title,.page-hero__subtitle,.page-rates .hero-title,.page-rates .hero-subtitle,
+.blog-page .blog-page-hero h1,.blog-page .blog-page-hero p{
+  color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.45)!important;
+}
+.blog-page .blog-page-hero .section-label{color:#6cf0c4!important;}
+.blog-page .blog-page-hero__quicklinks a{background:rgba(4,24,33,.72)!important;color:#fff!important;border-color:rgba(255,255,255,.2)!important;}
+
+/* Real imagery for previously icon-led feature cards. */
+.client-card-media{
+  width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;margin-bottom:1rem;
+  background:#eaf3f2;border:1px solid var(--color-border);
+}
+.client-card-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+.travel-option-card .card__icon.client-icon-replaced,
+.page-pricing .card .card__icon.client-icon-replaced{display:none!important;}
+.travel-option-card{overflow:hidden!important;}
+
+@media(max-width:1024px){
+  .auth-page .auth-wrap{grid-template-columns:1fr!important;grid-template-rows:auto auto!important;}
+  .auth-page .auth-shell-brand{grid-column:1!important;min-height:70px;padding:12px 20px;}
+  .page-home .hero,.page-home2 .hero,.page-rates .hero,.page-rate-calculator .page-hero,
+  .page-hero,.blog-page .blog-page-hero{
+    height:auto!important;min-height:var(--client-hero-h-tablet)!important;padding-top:calc(var(--header-height) + 34px)!important;padding-bottom:42px!important;
+  }
+}
+@media(max-width:767px){
+  .auth-page main{padding:18px!important;padding-top:64px!important;}
+  .auth-page .auth-shell-brand{min-height:64px;padding:10px 16px;font-size:1.15rem;}
+  .auth-page .auth-shell-brand__mark{width:40px;height:40px;min-width:40px;}
+  .page-home .hero,.page-home2 .hero,.page-rates .hero,.page-rate-calculator .page-hero,
+  .page-hero,.blog-page .blog-page-hero{
+    min-height:var(--client-hero-h-mobile)!important;height:auto!important;padding-top:calc(var(--header-height) + 26px)!important;padding-bottom:34px!important;
+    background-position:center!important;
+  }
+}

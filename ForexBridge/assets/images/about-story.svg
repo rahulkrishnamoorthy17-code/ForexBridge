@@ -1,0 +1,29 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" role="img" aria-label="Modern currency exchange office concept">
+  <defs><linearGradient id="gJ" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#065F46"/></linearGradient><linearGradient id="gBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1A2A"/><stop offset="100%" stop-color="#112B3C"/></linearGradient><radialGradient id="gGlow" cx="70%" cy="25%" r="60%"><stop offset="0%" stop-color="#0D9373" stop-opacity="0.35"/><stop offset="100%" stop-color="#0D9373" stop-opacity="0"/></radialGradient></defs>
+  <rect width="900" height="620" fill="url(#gBg)"/>
+  <rect width="900" height="620" fill="url(#gGlow)"/>
+  <g opacity="0.3">
+    <circle cx="450" cy="310" r="240" fill="none" stroke="#10B981" stroke-width="1"/>
+    <circle cx="450" cy="310" r="170" fill="none" stroke="#D4A574" stroke-width="1"/>
+  </g>
+  <g>
+    <rect x="150" y="180" width="600" height="260" rx="24" fill="#0E2A3A" stroke="#10B981" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="150" y="180" width="600" height="64" rx="24" fill="#0D9373" opacity="0.5"/>
+    <rect x="150" y="212" width="600" height="32" fill="#0D9373" opacity="0.5"/>
+    <g>
+      <rect x="196" y="290" width="150" height="104" rx="14" fill="#D4A574"/>
+      <rect x="372" y="290" width="150" height="104" rx="14" fill="#0D9373"/>
+      <rect x="548" y="290" width="150" height="104" rx="14" fill="#2A4F68"/>
+      <g font-family="Arial" font-size="20" font-weight="bold" fill="#fff">
+        <text x="271" y="336" text-anchor="middle">Rates</text>
+        <text x="447" y="336" text-anchor="middle">Cards</text>
+        <text x="623" y="336" text-anchor="middle">Transfers</text>
+      </g>
+    </g>
+  </g>
+  <g font-family="Georgia, serif" font-weight="bold">
+    <text x="210" y="140" font-size="56" fill="#10B981" opacity="0.9">&#36;</text>
+    <text x="640" y="520" font-size="64" fill="#D4A574" opacity="0.7">&#8377;</text>
+      <text x="760" y="160" font-size="46" fill="#10B981" opacity="0.75">&#8364;</text>
+  </g>
+</svg>
